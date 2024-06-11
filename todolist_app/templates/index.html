@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static%}
+
+{%block title%}
+<title>Welcome to taskmate</title>
+{%endblock title%}
+{%block content%}
+    <div class="container">
+        <div class="d-flex mt-5">
+            <div class="col-lg-4">
+                <img class="rounded-lg shadow-lg" src="{%static 'images/stickynotes.jpg'%}" alt="laoding" widht="360" height="250">
+            </div>
+            <div class="col-lg-4">
+                <img class="rounded-lg shadow-lg" src="{%static 'images/stickynotes.jpg'%}" alt="laoding" widht="360" height="250">
+            </div>
+            <div class="col-lg-4">
+                <img class="rounded-lg shadow-lg" src="{%static 'images/stickynotes.jpg'%}" alt="laoding" widht="360" height="250">
+            </div>
+        </div>
+         <div class="mt-5">
+            <div class="col-md-10">
+           <center> <p class="h1 text-primary">Plan your tasks now </p>
+            <p class="h2 mt-3">Quick and Easy to use</p>
+            <p class="h5">TASKMATE Let's You keep Track of your task in one  place</p>
+            <a href="{%url 'task' %}"><button type="button" class="mt-3 shadow btn btn-dark btn-lg">let's get started</button></a>
+          </div>
+        </div>
+    </div>
+{%endblock content%}
