@@ -2,7 +2,7 @@
 
 TaskMate is a personal task management web application built with Django. It provides users with a personalized portal to manage their tasks efficiently.
 
-![TaskMate Screenshot](screenshot_url_here)
+![TaskMate Screenshot](Screenshot 2024-06-25 200046.png)
 
 ## ✨ Features
 
