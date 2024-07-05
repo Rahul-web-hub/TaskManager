@@ -24,7 +24,7 @@ print(SECRET_KEY)
 DEBUG =env("DJANGO_DEBUG")
 
 ALLOWED_HOSTS = ["localhost","127.0.0.1","https://taskmanager-wjnk.onrender.com"]
-CSRF_TRUSTED_ORIGINS=["taskmanager-wjnk.onrender.com"]
+CSRF_TRUSTED_ORIGINS=["https://taskmanager-wjnk.onrender.com"]
 
 
 # Application definition
