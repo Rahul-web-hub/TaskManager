@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url "index" %}">
-          <img src="{% static 'images/logo.svg.png' %}"  height="30"></a>
+          <img src="{% static 'images/logo.svg.png' %}" class="logo" height="30"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,28 +26,34 @@
               <a class="nav-link" href="{% url "contact" %}">Contact</a>
             
             </li>
-            <li>
+            {% comment %} <li>
               <a class="nav-link" href="{% url "about" %}">About us</a>
-            </li>
+            </li> {% endcomment %}
           </ul>
         </div>
       </div>
-      {% if user.is_authenticated%}
-        <form action="{% url 'logout' %}" method="post" class="d-flex">
-        {% csrf_token %}
-        <p class="text-white pe-2">Logged In as {{user.username}}</p>
-        <button class="btn btn-outline-success my-2 my-sm-0 me-5" type="submit">Logout</button>
-     </form>
-      {%else%}
-      <form action="{% url 'login' %}" method="post" class="d-flex">
-        {% csrf_token %}
-        <button class="btn btn-outline-success my-2 my-sm-0 me-5" type="submit">Login</button>
-     </form>
-     <form action="{% url 'register' %}" method="post" class="d-flex">
+      {% if user.is_authenticated %}
+  <div class="me-5">
+  <div class="d-flex align-items-center">
+    <p class="text-white mb-0 me-5">Logged in as {{ user.username }}</p>
+    <form action="{% url 'logout' %}" method="post">
       {% csrf_token %}
-      <button class="btn btn-outline-success my-2 my-sm-0 me-5" type="submit">Register</button>
-   </form>
-      {%endif%}
+      <button class="btn btn-outline-light" type="submit">Logout</button>
+    </form>
+  </div>
+{% else %}
+  <div class="d-flex">
+    <form action="{% url 'login' %}" method="post" class="me-2">
+      {% csrf_token %}
+      <button class="btn btn-outline-light" type="submit">Login</button>
+    </form>
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      <button class="btn btn-light" type="submit">Register</button>
+    </form>
+  </div>
+{% endif %}
+</div>
     </nav>
   </head>
   <body class="bg-light">
