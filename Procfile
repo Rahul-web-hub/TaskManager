@@ -1,2 +1,1 @@
-
-web: python manage.py migrate makemigrations && gunicorn djangoProject.wsgi
+web: python manage.py migrate  makemigrations && gunicorn djangoProject.wsgi
