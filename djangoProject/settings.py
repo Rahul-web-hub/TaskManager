@@ -23,8 +23,8 @@ print(SECRET_KEY)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =env("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1","task-manager-wm8m-le9h1z4t1-rahulwebhubs-projects.vercel.app"]
-CSRF_TRUSTED_ORIGINS=["https://task-manager-wm8m-le9h1z4t1-rahulwebhubs-projects.vercel.app/"]
+ALLOWED_HOSTS = ["localhost","127.0.0.1",".vercel.app"]
+CSRF_TRUSTED_ORIGINS=["https://*.vercel.app"]
 
 
 # Application definition
